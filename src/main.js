@@ -82,7 +82,7 @@ export default async function () {
       await sleep(INSIDEX_API_DELAY);
 
       for (const trade of trades) {
-        console.log(trade);
+       
         try {
           const isInStable = STABLE_COINS.includes(trade.coinIn);
           const isOutStable = STABLE_COINS.includes(trade.coinOut);
