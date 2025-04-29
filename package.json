@@ -1,0 +1,27 @@
+{
+  "name": "whale-alert-automation",
+  "version": "1.0.0",
+  "description": "Automated system for monitoring whale activity and posting alerts to Twitter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@supabase/supabase-js": "^2.24.0",
+    "axios": "^1.4.0",
+    "bree": "^9.2.4",
+    "dotenv": "^16.0.3",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
