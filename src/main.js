@@ -82,7 +82,6 @@ export default async function () {
       await sleep(INSIDEX_API_DELAY);
 
       for (const trade of trades) {
-       
         try {
           const isInStable = STABLE_COINS.includes(trade.coinIn);
           const isOutStable = STABLE_COINS.includes(trade.coinOut);
@@ -94,6 +93,8 @@ export default async function () {
             isInStable,
             isOutStable
           );
+
+          if (action === "none") continue;
 
           const coinTicker = extractTicker(coin);
           const whaleTicker = extractTicker(whale.coin_type);

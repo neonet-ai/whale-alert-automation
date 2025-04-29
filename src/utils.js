@@ -25,6 +25,12 @@ export const determineTradeAction = (trade, isInStable, isOutStable) => {
       coin: trade.coinIn,
       amount: trade.amountIn,
     };
+
+  return {
+    action: "none",
+    coin: null,
+    amount: null,
+  };
 };
 
 export const sleep = (time) => {
