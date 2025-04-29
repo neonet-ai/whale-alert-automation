@@ -12,25 +12,25 @@ export const formatUsd = (amount) => {
 };
 
 export const determineTradeAction = (trade, isInStable, isOutStable) => {
-  if (isInStable)
+  if (isInStable) {
     return {
       action: "bought",
       coin: trade.coinOut,
       amount: trade.amountOut,
     };
-
-  if (isOutStable)
+  } else if (isOutStable) {
     return {
       action: "sold",
       coin: trade.coinIn,
       amount: trade.amountIn,
     };
-
-  return {
-    action: "none",
-    coin: null,
-    amount: null,
-  };
+  } else {
+    return {
+      action: "none",
+      coin: null,
+      amount: null,
+    };
+  }
 };
 
 export const sleep = (time) => {
