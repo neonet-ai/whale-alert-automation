@@ -19,3 +19,4 @@ export const TWITTER_API_URL = process.env.TWITTER_API_URL;
 export const TWITTER_API_KEY = process.env.TWITTER_API_KEY;
 
 export const STABLE_COINS = process.env.STABLE_COINS.split(",");
+export const COINS_TO_IGNORE = process.env.COINS_TO_IGNORE.split(",");

@@ -25,6 +25,7 @@ import {
   SUPABASE_URL,
   QUALITY_SCORE_INCREMENT,
   QUALITY_SCORE_DECREMENT,
+  COINS_TO_IGNORE,
 } from "./constants.js";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -110,7 +111,12 @@ export default async function () {
             (marketData.coinPrice * formattedAmount).toFixed(2)
           );
 
-          if (action === "bought" && amountInUsd >= MIN_TRADE_VOLUME) {
+          if (
+            action === "bought" &&
+            amountInUsd >= MIN_TRADE_VOLUME &&
+            !COINS_TO_IGNORE.includes(coin) &&
+            coin !== whale.coin_type
+          ) {
             const fdv = formatUsd(Number(marketData.marketCap).toFixed(2));
 
             const tweet = `A $${whaleTicker} whale just ${action} ${formatUsd(
