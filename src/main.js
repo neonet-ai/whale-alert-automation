@@ -57,11 +57,11 @@ export default async function () {
       await sleep(INSIDEX_API_DELAY);
 
       if (!trades || trades.length === 0) {
-        await decreaseQualityScore(
-          supabase,
-          whale.holder_address,
-          QUALITY_SCORE_DECREMENT
-        );
+        // await decreaseQualityScore(
+        //   supabase,
+        //   whale.holder_address,
+        //   QUALITY_SCORE_DECREMENT
+        // );
         continue;
       }
 

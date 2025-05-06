@@ -12,7 +12,7 @@ export const getWhales = async (supabase) => {
   const { data } = await supabase
     .from("token_holders")
     .select("*")
-    .gt("quality_score", MIN_QUALITY_SCORE);
+    // .gt("quality_score", MIN_QUALITY_SCORE);
 
   return data;
 };
